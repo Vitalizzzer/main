@@ -40,7 +40,7 @@
             this.txtEditTitle = new System.Windows.Forms.TextBox();
             this.txtEditAuthor = new System.Windows.Forms.TextBox();
             this.pbxPicEdit = new System.Windows.Forms.PictureBox();
-            this.btnSaveChangesEdit = new System.Windows.Forms.Button();
+            this.lblSaveChangesEdit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPicEdit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.lblInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblInfo.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.Black;
-            this.lblInfo.Location = new System.Drawing.Point(20, 177);
+            this.lblInfo.Location = new System.Drawing.Point(14, 179);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(57, 24);
@@ -63,7 +63,7 @@
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(17, 140);
+            this.lblDate.Location = new System.Drawing.Point(14, 141);
             this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(65, 24);
@@ -76,7 +76,7 @@
             this.lblGenre.BackColor = System.Drawing.Color.Transparent;
             this.lblGenre.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenre.ForeColor = System.Drawing.Color.Black;
-            this.lblGenre.Location = new System.Drawing.Point(17, 100);
+            this.lblGenre.Location = new System.Drawing.Point(14, 98);
             this.lblGenre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(74, 24);
@@ -102,7 +102,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(16, 58);
+            this.lblTitle.Location = new System.Drawing.Point(14, 57);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(61, 24);
@@ -114,7 +114,7 @@
             this.txtEditInfo.BackColor = System.Drawing.Color.Honeydew;
             this.txtEditInfo.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditInfo.ForeColor = System.Drawing.Color.Black;
-            this.txtEditInfo.Location = new System.Drawing.Point(113, 174);
+            this.txtEditInfo.Location = new System.Drawing.Point(113, 176);
             this.txtEditInfo.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditInfo.Multiline = true;
             this.txtEditInfo.Name = "txtEditInfo";
@@ -129,7 +129,7 @@
             this.dateTimeEdit.CustomFormat = "dd.MM.yyyy";
             this.dateTimeEdit.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeEdit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeEdit.Location = new System.Drawing.Point(114, 134);
+            this.dateTimeEdit.Location = new System.Drawing.Point(113, 135);
             this.dateTimeEdit.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeEdit.Name = "dateTimeEdit";
             this.dateTimeEdit.Size = new System.Drawing.Size(357, 33);
@@ -141,7 +141,7 @@
             this.cmbEditGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEditGenre.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEditGenre.FormattingEnabled = true;
-            this.cmbEditGenre.Location = new System.Drawing.Point(112, 97);
+            this.cmbEditGenre.Location = new System.Drawing.Point(113, 95);
             this.cmbEditGenre.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEditGenre.Name = "cmbEditGenre";
             this.cmbEditGenre.Size = new System.Drawing.Size(358, 32);
@@ -153,7 +153,7 @@
             this.txtEditTitle.BackColor = System.Drawing.Color.Honeydew;
             this.txtEditTitle.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditTitle.ForeColor = System.Drawing.Color.Black;
-            this.txtEditTitle.Location = new System.Drawing.Point(113, 56);
+            this.txtEditTitle.Location = new System.Drawing.Point(113, 54);
             this.txtEditTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditTitle.Name = "txtEditTitle";
             this.txtEditTitle.Size = new System.Drawing.Size(358, 33);
@@ -164,7 +164,7 @@
             this.txtEditAuthor.BackColor = System.Drawing.Color.Honeydew;
             this.txtEditAuthor.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditAuthor.ForeColor = System.Drawing.Color.Black;
-            this.txtEditAuthor.Location = new System.Drawing.Point(113, 15);
+            this.txtEditAuthor.Location = new System.Drawing.Point(113, 13);
             this.txtEditAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditAuthor.Name = "txtEditAuthor";
             this.txtEditAuthor.Size = new System.Drawing.Size(358, 33);
@@ -177,7 +177,7 @@
             this.pbxPicEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxPicEdit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbxPicEdit.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxPicEdit.InitialImage")));
-            this.pbxPicEdit.Location = new System.Drawing.Point(382, 174);
+            this.pbxPicEdit.Location = new System.Drawing.Point(382, 176);
             this.pbxPicEdit.Name = "pbxPicEdit";
             this.pbxPicEdit.Size = new System.Drawing.Size(88, 129);
             this.pbxPicEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,27 +185,22 @@
             this.pbxPicEdit.TabStop = false;
             this.pbxPicEdit.Click += new System.EventHandler(this.pbxPicEdit_Click);
             // 
-            // btnSaveChangesEdit
+            // lblSaveChangesEdit
             // 
-            this.btnSaveChangesEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveChangesEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveChangesEdit.BackgroundImage")));
-            this.btnSaveChangesEdit.FlatAppearance.BorderSize = 0;
-            this.btnSaveChangesEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSaveChangesEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSaveChangesEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveChangesEdit.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChangesEdit.ForeColor = System.Drawing.Color.MintCream;
-            this.btnSaveChangesEdit.Location = new System.Drawing.Point(146, 315);
-            this.btnSaveChangesEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSaveChangesEdit.Name = "btnSaveChangesEdit";
-            this.btnSaveChangesEdit.Size = new System.Drawing.Size(310, 40);
-            this.btnSaveChangesEdit.TabIndex = 39;
-            this.btnSaveChangesEdit.Text = "Save Changes";
-            this.btnSaveChangesEdit.UseVisualStyleBackColor = false;
-            this.btnSaveChangesEdit.Click += new System.EventHandler(this.btnSaveChangesEdit_Click);
-            this.btnSaveChangesEdit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnSaveChanges_MouseDown);
-            this.btnSaveChangesEdit.MouseLeave += new System.EventHandler(this.BtnSaveChanges_MouseLeave);
-            this.btnSaveChangesEdit.MouseHover += new System.EventHandler(this.BtnSaveChanges_MouseHover);
+            this.lblSaveChangesEdit.BackColor = System.Drawing.Color.Transparent;
+            this.lblSaveChangesEdit.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaveChangesEdit.ForeColor = System.Drawing.Color.Transparent;
+            this.lblSaveChangesEdit.Image = global::Library.Properties.Resources.AddBook0;
+            this.lblSaveChangesEdit.Location = new System.Drawing.Point(141, 318);
+            this.lblSaveChangesEdit.Name = "lblSaveChangesEdit";
+            this.lblSaveChangesEdit.Size = new System.Drawing.Size(310, 40);
+            this.lblSaveChangesEdit.TabIndex = 47;
+            this.lblSaveChangesEdit.Text = "Save Changes";
+            this.lblSaveChangesEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSaveChangesEdit.Click += new System.EventHandler(this.lblSaveChangesEdit_Click);
+            this.lblSaveChangesEdit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnSaveChanges_MouseDown);
+            this.lblSaveChangesEdit.MouseLeave += new System.EventHandler(this.BtnSaveChanges_MouseLeave);
+            this.lblSaveChangesEdit.MouseHover += new System.EventHandler(this.LblSaveChanges_MouseHover);
             // 
             // LibraryEdit
             // 
@@ -214,6 +209,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(487, 372);
+            this.Controls.Add(this.lblSaveChangesEdit);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblGenre);
@@ -225,7 +221,6 @@
             this.Controls.Add(this.txtEditTitle);
             this.Controls.Add(this.txtEditAuthor);
             this.Controls.Add(this.pbxPicEdit);
-            this.Controls.Add(this.btnSaveChangesEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LibraryEdit";
@@ -250,7 +245,7 @@
         private System.Windows.Forms.TextBox txtEditTitle;
         private System.Windows.Forms.TextBox txtEditAuthor;
         private System.Windows.Forms.PictureBox pbxPicEdit;
-        private System.Windows.Forms.Button btnSaveChangesEdit;
+        private System.Windows.Forms.Label lblSaveChangesEdit;
 
     }
 }

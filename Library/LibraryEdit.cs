@@ -71,7 +71,7 @@ namespace Library
             _libraryInfra.OpenImage(pbxPicEdit);
         }
 
-        private void btnSaveChangesEdit_Click(object sender, EventArgs e)
+        private void lblSaveChangesEdit_Click(object sender, EventArgs e)
         {
             var b = (txtEditAuthor.Text == string.Empty) || (txtEditTitle.Text == string.Empty) ||
                     (cmbEditGenre.Text == string.Empty);
@@ -113,19 +113,19 @@ namespace Library
 
         #region BUTTON EFFECTS
 
-        private void BtnSaveChanges_MouseHover(object sender, EventArgs e)
+        private void LblSaveChanges_MouseHover(object sender, EventArgs e)
         {
-            btnSaveChangesEdit.BackgroundImage = Properties.Resources.AddBook1;
+            lblSaveChangesEdit.Image = Properties.Resources.AddBook1;
         }
 
         private void BtnSaveChanges_MouseLeave(object sender, EventArgs e)
         {
-            btnSaveChangesEdit.BackgroundImage = Properties.Resources.AddBook0;
+            lblSaveChangesEdit.Image = Properties.Resources.AddBook0;
         }
 
         private void BtnSaveChanges_MouseDown(object sender, MouseEventArgs e)
         {
-            btnSaveChangesEdit.BackgroundImage = Properties.Resources.AddBook2;
+            lblSaveChangesEdit.Image = Properties.Resources.AddBook2;
         }
 
         #endregion

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -119,7 +120,7 @@ namespace Library
 
         #region ADD BOOK
 
-        private void btnAddBook_Click(object sender, EventArgs e)
+        private void lblAddBook_Click(object sender, EventArgs e)
         {
             if (FieldsVerification())
             {
@@ -210,12 +211,12 @@ namespace Library
             cmbGenre.Items.AddRange(GenresArray());
         }
 
-        private void btnExportExcel_Click(object sender, EventArgs e)
+        private void lblExport_Click(object sender, EventArgs e)
         {
             _libraryInfra.SaveToExcel(_sqlQueries.ExtractColumnsNames(), _sqlQueries.ExtractRowsFromDb());
         }
 
-        private void btnShowAll_Click(object sender, EventArgs e)
+        private void lblShowAll_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable("");
@@ -223,12 +224,12 @@ namespace Library
             _libraryFormTable.DataGridViewLibrary.Columns[3].ReadOnly = true;
         }
 
-        public void btnPic_Click(object sender, EventArgs e)
+        public void pbxPic_Click(object sender, EventArgs e)
         {
             _libraryInfra.OpenImage(pbxPic);
         }
 
-        private void btnWishList_Click(object sender, EventArgs e)
+        private void lblWishList_Click(object sender, EventArgs e)
         {
             _clickCounter++;
             if (_clickCounter%2 == 0)
@@ -257,64 +258,64 @@ namespace Library
 
         #region GREEN BUTTONS EFFECTS
 
-        private void BtnAddBook_MouseHover(object sender, EventArgs e)
+        private void LblAddBook_MouseHover(object sender, EventArgs e)
         {
-            btnAddBook.BackgroundImage = Properties.Resources.AddBook1;
+            lblAddBook.Image = Properties.Resources.AddBook1;
         }
 
-        private void BtnAddBook_MouseLeave(object sender, EventArgs e)
+        private void LblAddBook_MouseLeave(object sender, EventArgs e)
         {
-            btnAddBook.BackgroundImage = Properties.Resources.AddBook0;
+            lblAddBook.Image = Properties.Resources.AddBook0;
         }
 
-        private void BtnAddBook_MouseDown(object sender, MouseEventArgs e)
+        private void LblAddBook_MouseDown(object sender, MouseEventArgs e)
         {
-            btnAddBook.BackgroundImage = Properties.Resources.AddBook2;
+            lblAddBook.Image = Properties.Resources.AddBook2;
         }
 
-        private void BtnShowAll_MouseHover(object sender, EventArgs e)
+        private void LblShowAll_MouseHover(object sender, EventArgs e)
         {
-            btnShowAll.BackgroundImage = Properties.Resources.ShowAllHover;
+            lblShowAll.Image = Properties.Resources.ShowAllHover;
         }
 
-        private void BtnShowAll_MouseLeave(object sender, EventArgs e)
+        private void LblShowAll_MouseLeave(object sender, EventArgs e)
         {
-            btnShowAll.BackgroundImage = Properties.Resources.ShowAllOrig;
+            lblShowAll.Image = Properties.Resources.ShowAllOrig;
         }
 
-        private void BtnShowAll_MouseDown(object sender, MouseEventArgs e)
+        private void LblShowAll_MouseDown(object sender, MouseEventArgs e)
         {
-            btnShowAll.BackgroundImage = Properties.Resources.ShowAllPress;
+            lblShowAll.Image = Properties.Resources.ShowAllPress;
         }
 
-        private void BtnWishList_MouseHover(object sender, EventArgs e)
+        private void LblWishList_MouseHover(object sender, EventArgs e)
         {
-            btnWishList.BackgroundImage = Properties.Resources.ShowAllHover;
+            lblWishList.Image = Properties.Resources.ShowAllHover;
         }
 
-        private void BtnWishList_MouseLeave(object sender, EventArgs e)
+        private void LblWishList_MouseLeave(object sender, EventArgs e)
         {
-            btnWishList.BackgroundImage = Properties.Resources.ShowAllOrig;
+            lblWishList.Image = Properties.Resources.ShowAllOrig;
         }
 
-        private void BtnWishList_MouseDown(object sender, MouseEventArgs e)
+        private void LblWishList_MouseDown(object sender, MouseEventArgs e)
         {
-            btnWishList.BackgroundImage = Properties.Resources.ShowAllPress;
+            lblWishList.Image = Properties.Resources.ShowAllPress;
         }
 
-        private void BtnExportExcel_MouseHover(object sender, EventArgs e)
+        private void LblExport_MouseHover(object sender, EventArgs e)
         {
-            btnExportExcel.BackgroundImage = Properties.Resources.ExportAllBooksHover;
+            lblExport.Image = Properties.Resources.ExportAllBooksHover;
         }
 
-        private void BtnExportExcel_MouseLeave(object sender, EventArgs e)
+        private void LblExport_MouseLeave(object sender, EventArgs e)
         {
-            btnExportExcel.BackgroundImage = Properties.Resources.ExportAllBooksOrig;
+            lblExport.Image = Properties.Resources.ExportAllBooksOrig;
         }
 
-        private void BtnExportExcel_MouseDown(object sender, MouseEventArgs e)
+        private void LblExport_MouseDown(object sender, MouseEventArgs e)
         {
-            btnExportExcel.BackgroundImage = Properties.Resources.ExportAllBooksPress;
+            lblExport.Image = Properties.Resources.ExportAllBooksPress;
         }
 
         #endregion

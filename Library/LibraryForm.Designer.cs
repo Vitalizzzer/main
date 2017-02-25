@@ -39,9 +39,6 @@
             this.btnEducational = new System.Windows.Forms.Button();
             this.btnReligious = new System.Windows.Forms.Button();
             this.txtNote = new System.Windows.Forms.TextBox();
-            this.btnExportExcel = new System.Windows.Forms.Button();
-            this.btnShowAll = new System.Windows.Forms.Button();
-            this.btnAddBook = new System.Windows.Forms.Button();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
@@ -54,9 +51,12 @@
             this.lblGenre = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAddBook = new System.Windows.Forms.Label();
             this.checkBoxOpenTable = new System.Windows.Forms.CheckBox();
-            this.btnWishList = new System.Windows.Forms.Button();
             this.toolTipOpenTable = new System.Windows.Forms.ToolTip(this.components);
+            this.lblShowAll = new System.Windows.Forms.Label();
+            this.lblWishList = new System.Windows.Forms.Label();
+            this.lblExport = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPic)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -255,71 +255,6 @@
             this.txtNote.Visible = false;
             this.txtNote.TextChanged += new System.EventHandler(this.txtNote_WriteToFile);
             // 
-            // btnExportExcel
-            // 
-            this.btnExportExcel.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportExcel.BackgroundImage = global::Library.Properties.Resources.ExportAllBooksOrig;
-            this.btnExportExcel.FlatAppearance.BorderSize = 0;
-            this.btnExportExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnExportExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportExcel.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcel.ForeColor = System.Drawing.Color.MintCream;
-            this.btnExportExcel.Location = new System.Drawing.Point(35, 668);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(430, 40);
-            this.btnExportExcel.TabIndex = 29;
-            this.btnExportExcel.Text = "Export All Books to Excel File";
-            this.btnExportExcel.UseVisualStyleBackColor = false;
-            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            this.btnExportExcel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnExportExcel_MouseDown);
-            this.btnExportExcel.MouseLeave += new System.EventHandler(this.BtnExportExcel_MouseLeave);
-            this.btnExportExcel.MouseHover += new System.EventHandler(this.BtnExportExcel_MouseHover);
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnShowAll.BackgroundImage = global::Library.Properties.Resources.ShowAllOrig;
-            this.btnShowAll.FlatAppearance.BorderSize = 0;
-            this.btnShowAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnShowAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowAll.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAll.ForeColor = System.Drawing.Color.MintCream;
-            this.btnShowAll.Location = new System.Drawing.Point(23, 631);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(210, 30);
-            this.btnShowAll.TabIndex = 30;
-            this.btnShowAll.Text = "Show All Books";
-            this.btnShowAll.UseVisualStyleBackColor = true;
-            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
-            this.btnShowAll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnShowAll_MouseDown);
-            this.btnShowAll.MouseLeave += new System.EventHandler(this.BtnShowAll_MouseLeave);
-            this.btnShowAll.MouseHover += new System.EventHandler(this.BtnShowAll_MouseHover);
-            // 
-            // btnAddBook
-            // 
-            this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBook.BackgroundImage = global::Library.Properties.Resources.AddBook0;
-            this.btnAddBook.FlatAppearance.BorderSize = 0;
-            this.btnAddBook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAddBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBook.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBook.ForeColor = System.Drawing.Color.MintCream;
-            this.btnAddBook.Location = new System.Drawing.Point(137, 310);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(310, 40);
-            this.btnAddBook.TabIndex = 9;
-            this.btnAddBook.Text = "Add Book";
-            this.btnAddBook.UseVisualStyleBackColor = false;
-            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
-            this.btnAddBook.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnAddBook_MouseDown);
-            this.btnAddBook.MouseLeave += new System.EventHandler(this.BtnAddBook_MouseLeave);
-            this.btnAddBook.MouseHover += new System.EventHandler(this.BtnAddBook_MouseHover);
-            // 
             // txtAuthor
             // 
             this.txtAuthor.BackColor = System.Drawing.Color.Honeydew;
@@ -393,7 +328,7 @@
             this.pbxPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxPic.TabIndex = 34;
             this.pbxPic.TabStop = false;
-            this.pbxPic.Click += new System.EventHandler(this.btnPic_Click);
+            this.pbxPic.Click += new System.EventHandler(this.pbxPic_Click);
             // 
             // lblInfo
             // 
@@ -463,6 +398,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.lblAddBook);
             this.groupBox1.Controls.Add(this.checkBoxOpenTable);
             this.groupBox1.Controls.Add(this.pbxPic);
             this.groupBox1.Controls.Add(this.lblInfo);
@@ -475,7 +411,6 @@
             this.groupBox1.Controls.Add(this.cmbGenre);
             this.groupBox1.Controls.Add(this.txtTitle);
             this.groupBox1.Controls.Add(this.txtAuthor);
-            this.groupBox1.Controls.Add(this.btnAddBook);
             this.groupBox1.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(14, 12);
@@ -484,6 +419,21 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Book";
+            // 
+            // lblAddBook
+            // 
+            this.lblAddBook.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddBook.Image = global::Library.Properties.Resources.AddBook0;
+            this.lblAddBook.Location = new System.Drawing.Point(138, 309);
+            this.lblAddBook.Name = "lblAddBook";
+            this.lblAddBook.Size = new System.Drawing.Size(310, 40);
+            this.lblAddBook.TabIndex = 36;
+            this.lblAddBook.Text = "Add Book";
+            this.lblAddBook.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAddBook.Click += new System.EventHandler(this.lblAddBook_Click);
+            this.lblAddBook.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblAddBook_MouseDown);
+            this.lblAddBook.MouseLeave += new System.EventHandler(this.LblAddBook_MouseLeave);
+            this.lblAddBook.MouseHover += new System.EventHandler(this.LblAddBook_MouseHover);
             // 
             // checkBoxOpenTable
             // 
@@ -500,26 +450,57 @@
             this.checkBoxOpenTable.UseVisualStyleBackColor = true;
             this.checkBoxOpenTable.MouseHover += new System.EventHandler(this.CheckBoxOpenTable_MouseHover);
             // 
-            // btnWishList
+            // lblShowAll
             // 
-            this.btnWishList.BackColor = System.Drawing.Color.Transparent;
-            this.btnWishList.BackgroundImage = global::Library.Properties.Resources.ShowAllOrig;
-            this.btnWishList.FlatAppearance.BorderSize = 0;
-            this.btnWishList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnWishList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnWishList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWishList.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWishList.ForeColor = System.Drawing.Color.MintCream;
-            this.btnWishList.Location = new System.Drawing.Point(265, 630);
-            this.btnWishList.Name = "btnWishList";
-            this.btnWishList.Size = new System.Drawing.Size(210, 30);
-            this.btnWishList.TabIndex = 37;
-            this.btnWishList.Text = "Wish List";
-            this.btnWishList.UseVisualStyleBackColor = false;
-            this.btnWishList.Click += new System.EventHandler(this.btnWishList_Click);
-            this.btnWishList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnWishList_MouseDown);
-            this.btnWishList.MouseLeave += new System.EventHandler(this.BtnWishList_MouseLeave);
-            this.btnWishList.MouseHover += new System.EventHandler(this.BtnWishList_MouseHover);
+            this.lblShowAll.BackColor = System.Drawing.Color.Transparent;
+            this.lblShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblShowAll.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowAll.ForeColor = System.Drawing.Color.Transparent;
+            this.lblShowAll.Image = global::Library.Properties.Resources.ShowAllOrig;
+            this.lblShowAll.Location = new System.Drawing.Point(23, 631);
+            this.lblShowAll.Name = "lblShowAll";
+            this.lblShowAll.Size = new System.Drawing.Size(210, 30);
+            this.lblShowAll.TabIndex = 38;
+            this.lblShowAll.Text = "Show All Books";
+            this.lblShowAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblShowAll.Click += new System.EventHandler(this.lblShowAll_Click);
+            this.lblShowAll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblShowAll_MouseDown);
+            this.lblShowAll.MouseLeave += new System.EventHandler(this.LblShowAll_MouseLeave);
+            this.lblShowAll.MouseHover += new System.EventHandler(this.LblShowAll_MouseHover);
+            // 
+            // lblWishList
+            // 
+            this.lblWishList.BackColor = System.Drawing.Color.Transparent;
+            this.lblWishList.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWishList.ForeColor = System.Drawing.Color.Transparent;
+            this.lblWishList.Image = global::Library.Properties.Resources.ShowAllOrig;
+            this.lblWishList.Location = new System.Drawing.Point(264, 631);
+            this.lblWishList.Name = "lblWishList";
+            this.lblWishList.Size = new System.Drawing.Size(210, 30);
+            this.lblWishList.TabIndex = 39;
+            this.lblWishList.Text = "Wish List";
+            this.lblWishList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWishList.Click += new System.EventHandler(this.lblWishList_Click);
+            this.lblWishList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblWishList_MouseDown);
+            this.lblWishList.MouseLeave += new System.EventHandler(this.LblWishList_MouseLeave);
+            this.lblWishList.MouseHover += new System.EventHandler(this.LblWishList_MouseHover);
+            // 
+            // lblExport
+            // 
+            this.lblExport.BackColor = System.Drawing.Color.Transparent;
+            this.lblExport.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExport.ForeColor = System.Drawing.Color.Transparent;
+            this.lblExport.Image = global::Library.Properties.Resources.ExportAllBooksOrig;
+            this.lblExport.Location = new System.Drawing.Point(32, 669);
+            this.lblExport.Name = "lblExport";
+            this.lblExport.Size = new System.Drawing.Size(430, 40);
+            this.lblExport.TabIndex = 40;
+            this.lblExport.Text = "Export All Books";
+            this.lblExport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExport.Click += new System.EventHandler(this.lblExport_Click);
+            this.lblExport.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblExport_MouseDown);
+            this.lblExport.MouseLeave += new System.EventHandler(this.LblExport_MouseLeave);
+            this.lblExport.MouseHover += new System.EventHandler(this.LblExport_MouseHover);
             // 
             // LibraryForm
             // 
@@ -529,18 +510,18 @@
             this.BackgroundImage = global::Library.Properties.Resources.LibraryForm_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1095, 718);
-            this.Controls.Add(this.btnWishList);
+            this.Controls.Add(this.lblExport);
+            this.Controls.Add(this.lblWishList);
+            this.Controls.Add(this.lblShowAll);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnReference);
             this.Controls.Add(this.btnReligious);
             this.Controls.Add(this.btnChild);
             this.Controls.Add(this.btnEducational);
             this.Controls.Add(this.btnBiography);
-            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnSciFi);
             this.Controls.Add(this.btnAdventures);
             this.Controls.Add(this.btnDrama);
-            this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.txtNote);
             this.Font = new System.Drawing.Font("Lucida Calligraphy", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -566,9 +547,6 @@
         private System.Windows.Forms.Button btnEducational;
         private System.Windows.Forms.Button btnReligious;
         private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.Button btnExportExcel;
-        private System.Windows.Forms.Button btnShowAll;
-        private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.ComboBox cmbGenre;
@@ -581,9 +559,12 @@
         private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnWishList;
         private System.Windows.Forms.CheckBox checkBoxOpenTable;
         private System.Windows.Forms.ToolTip toolTipOpenTable;
+        private System.Windows.Forms.Label lblAddBook;
+        private System.Windows.Forms.Label lblShowAll;
+        private System.Windows.Forms.Label lblWishList;
+        private System.Windows.Forms.Label lblExport;
     }
 }
 
