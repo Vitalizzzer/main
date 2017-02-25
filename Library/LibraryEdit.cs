@@ -107,6 +107,7 @@ namespace Library
 
             var libraryFormTable = new LibraryFormTable();
             libraryFormTable.PopulateDataTable(cmbEditGenre.Text);
+            Close();
         }
 
         #endregion
