@@ -181,6 +181,12 @@
     <None Include="Resources\Book7_1.png" />
     <None Include="Resources\Book7_2.png" />
     <None Include="Resources\no_choose_image.png" />
+    <None Include="Resources\Book9_0.png" />
+    <None Include="Resources\Book9_1.png" />
+    <None Include="Resources\Book9_2.png" />
+    <None Include="Resources\Book10_0.png" />
+    <None Include="Resources\Book10_1.png" />
+    <None Include="Resources\Book10_2.png" />
     <Content Include="Resources\ShowAllHover.png" />
     <Content Include="Resources\ShowAllOrig.png" />
     <Content Include="Resources\ShowAllPress.png" />

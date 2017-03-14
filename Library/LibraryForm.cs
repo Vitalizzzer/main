@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -32,8 +31,9 @@ namespace Library
         {
             object[] genreArray =
             {
-                btnDrama.Text, btnAdventures.Text, btnSciFi.Text, btnBiography.Text,
-                btnChild.Text, btnReference.Text, btnEducational.Text, btnReligious.Text
+                lblDrama.Text, lblAdventures.Text, lblSciFi.Text, lblBiography.Text,
+                lblChild.Text, lblReference.Text, lblEducational.Text, lblReligious.Text, 
+                lblMilitary.Text,lblPoetry.Text
             };
 
             return genreArray;
@@ -72,28 +72,34 @@ namespace Library
                 switch (item)
                 {
                     case "Drama":
-                        btnDrama_Click(this, new EventArgs());
+                        lblDrama_Click(this, new EventArgs());
                         break;
                     case "Adventures":
-                        btnAdventures_Click(this, new EventArgs());
+                        lblAdventures_Click(this, new EventArgs());
                         break;
-                    case "Biography Historic":
-                        btnBiography_Click(this, new EventArgs());
+                    case "Biography /Historic":
+                        lblBiography_Click(this, new EventArgs());
                         break;
-                    case "Reference Guides":
-                        btnReference_Click(this, new EventArgs());
+                    case "Reference /Guides":
+                        lblReference_Click(this, new EventArgs());
                         break;
                     case "Science Fiction":
-                        btnSciFi_Click(this, new EventArgs());
+                        lblSciFi_Click(this, new EventArgs());
                         break;
                     case "For Children":
-                        btnChild_Click(this, new EventArgs());
+                        lblChild_Click(this, new EventArgs());
                         break;
                     case "Educational":
-                        btnEducational_Click(this, new EventArgs());
+                        lblEducational_Click(this, new EventArgs());
                         break;
                     case "Religious":
-                        btnReligious_Click(this, new EventArgs());
+                        lblReligious_Click(this, new EventArgs());
+                        break;
+                    case "Military Literature":
+                        lblMilitary_Click(this, new EventArgs());
+                        break;
+                    case "Poetry":
+                        lblPoetry_Click(this, new EventArgs());
                         break;
                 }
             }
@@ -155,53 +161,66 @@ namespace Library
 
         #region GENERES
 
-        public void btnDrama_Click(object sender, EventArgs e)
+        public void lblDrama_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[0].ToString());
         }
 
-        private void btnAdventures_Click(object sender, EventArgs e)
+        private void lblAdventures_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[1].ToString());
         }
 
-        private void btnSciFi_Click(object sender, EventArgs e)
+        private void lblSciFi_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[2].ToString());
         }
 
-        private void btnBiography_Click(object sender, EventArgs e)
+        private void lblBiography_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[3].ToString());
         }
 
-        private void btnChild_Click(object sender, EventArgs e)
+        private void lblChild_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[4].ToString());
         }
 
-        private void btnReference_Click(object sender, EventArgs e)
+        private void lblReference_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[5].ToString());
         }
 
-        private void btnEducational_Click(object sender, EventArgs e)
+        private void lblEducational_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[6].ToString());
         }
 
-        private void btnReligious_Click(object sender, EventArgs e)
+        private void lblReligious_Click(object sender, EventArgs e)
         {
             _libraryFormTable = new LibraryFormTable();
             _libraryFormTable.PopulateDataTable(GenresArray()[7].ToString());
         }
+
+        private void lblMilitary_Click(object sender, EventArgs e)
+        {
+            _libraryFormTable = new LibraryFormTable();
+            _libraryFormTable.PopulateDataTable(GenresArray()[8].ToString());
+        }
+
+        private void lblPoetry_Click(object sender, EventArgs e)
+        {
+            _libraryFormTable = new LibraryFormTable();
+            _libraryFormTable.PopulateDataTable(GenresArray()[9].ToString());
+        }
+        
 
         #endregion
 
@@ -322,126 +341,157 @@ namespace Library
 
         #region GENRES BUTTONS EFFECTS
 
-        private void BtnDrama_MouseHover(object sender, EventArgs e)
+        private void LblDrama_MouseHover(object sender, EventArgs e)
         {
-            btnDrama.BackgroundImage = Properties.Resources.Book1_0;
+            lblDrama.Image = Properties.Resources.Book1_0;
         }
 
-        private void BtnDrama_MouseLeave(object sender, EventArgs e)
+        private void LblDrama_MouseLeave(object sender, EventArgs e)
         {
-            btnDrama.BackgroundImage = Properties.Resources.Book1_1;
+            lblDrama.Image = Properties.Resources.Book1_1;
         }
 
-        private void BtnDrama_MouseDown(object sender, MouseEventArgs e)
+        private void LblDrama_MouseDown(object sender, MouseEventArgs e)
         {
-            btnDrama.BackgroundImage = Properties.Resources.Book1_2;
+            lblDrama.Image = Properties.Resources.Book1_2;
         }
 
-        private void BtnAdventures_MouseHover(object sender, EventArgs e)
+        private void LblAdventures_MouseHover(object sender, EventArgs e)
         {
-            btnAdventures.BackgroundImage = Properties.Resources.Book6_0;
+            lblAdventures.Image = Properties.Resources.Book6_0;
         }
 
-        private void BtnAdventures_MouseLeave(object sender, EventArgs e)
+        private void LblAdventures_MouseLeave(object sender, EventArgs e)
         {
-            btnAdventures.BackgroundImage = Properties.Resources.Book6_1;
+            lblAdventures.Image = Properties.Resources.Book6_1;
         }
 
-        private void BtnAdventures_MouseDown(object sender, MouseEventArgs e)
+        private void LblAdventures_MouseDown(object sender, MouseEventArgs e)
         {
-            btnAdventures.BackgroundImage = Properties.Resources.Book6_2;
+            lblAdventures.Image = Properties.Resources.Book6_2;
         }
 
-        private void BtnBiography_MouseHover(object sender, EventArgs e)
+        private void LblBiography_MouseHover(object sender, EventArgs e)
         {
-            btnBiography.BackgroundImage = Properties.Resources.Book3_0;
+            lblBiography.Image = Properties.Resources.Book3_0;
         }
 
-        private void BtnBiography_MouseLeave(object sender, EventArgs e)
+        private void LblBiography_MouseLeave(object sender, EventArgs e)
         {
-            btnBiography.BackgroundImage = Properties.Resources.Book3_1;
+            lblBiography.Image = Properties.Resources.Book3_1;
         }
 
-        private void BtnBiography_MouseDown(object sender, MouseEventArgs e)
+        private void LblBiography_MouseDown(object sender, MouseEventArgs e)
         {
-            btnBiography.BackgroundImage = Properties.Resources.Book3_2;
+            lblBiography.Image = Properties.Resources.Book3_2;
         }
 
-        private void BtnReference_MouseHover(object sender, EventArgs e)
+        private void LblReference_MouseHover(object sender, EventArgs e)
         {
-            btnReference.BackgroundImage = Properties.Resources.Book5_0;
+            lblReference.Image = Properties.Resources.Book5_0;
         }
 
-        private void BtnReference_MouseLeave(object sender, EventArgs e)
+        private void LblReference_MouseLeave(object sender, EventArgs e)
         {
-            btnReference.BackgroundImage = Properties.Resources.Book5_1;
+            lblReference.Image = Properties.Resources.Book5_1;
         }
 
-        private void BtnReference_MouseDown(object sender, MouseEventArgs e)
+        private void LblReference_MouseDown(object sender, MouseEventArgs e)
         {
-            btnReference.BackgroundImage = Properties.Resources.Book5_2;
+            lblReference.Image = Properties.Resources.Book5_2;
         }
 
-        private void BtnSciFi_MouseHover(object sender, EventArgs e)
+        private void LblSciFi_MouseHover(object sender, EventArgs e)
         {
-            btnSciFi.BackgroundImage = Properties.Resources.Book4_0;
+            lblSciFi.Image = Properties.Resources.Book4_0;
         }
 
-        private void BtnSciFi_MouseLeave(object sender, EventArgs e)
+        private void LblSciFi_MouseLeave(object sender, EventArgs e)
         {
-            btnSciFi.BackgroundImage = Properties.Resources.Book4_1;
+            lblSciFi.Image = Properties.Resources.Book4_1;
         }
 
-        private void BtnSciFi_MouseDown(object sender, MouseEventArgs e)
+        private void LblSciFi_MouseDown(object sender, MouseEventArgs e)
         {
-            btnSciFi.BackgroundImage = Properties.Resources.Book4_2;
+            lblSciFi.Image = Properties.Resources.Book4_2;
         }
 
-        private void BtnChild_MouseHover(object sender, EventArgs e)
+        private void LblChild_MouseHover(object sender, EventArgs e)
         {
-            btnChild.BackgroundImage = Properties.Resources.Book0_0;
+            lblChild.Image = Properties.Resources.Book0_0;
         }
 
-        private void BtnChild_MouseLeave(object sender, EventArgs e)
+        private void LblChild_MouseLeave(object sender, EventArgs e)
         {
-            btnChild.BackgroundImage = Properties.Resources.Book0_1;
+            lblChild.Image = Properties.Resources.Book0_1;
         }
 
-        private void BtnChild_MouseDown(object sender, MouseEventArgs e)
+        private void LblChild_MouseDown(object sender, MouseEventArgs e)
         {
-            btnChild.BackgroundImage = Properties.Resources.Book0_2;
+            lblChild.Image = Properties.Resources.Book0_2;
         }
 
-        private void BtnEducational_MouseHover(object sender, EventArgs e)
+        private void LblEducational_MouseHover(object sender, EventArgs e)
         {
-            btnEducational.BackgroundImage = Properties.Resources.Book2_0;
+           lblEducational.Image = Properties.Resources.Book2_0;
         }
 
-        private void BtnEducational_MouseLeave(object sender, EventArgs e)
+        private void LblEducational_MouseLeave(object sender, EventArgs e)
         {
-            btnEducational.BackgroundImage = Properties.Resources.Book2_1;
+            lblEducational.Image = Properties.Resources.Book2_1;
         }
 
-        private void BtnEducational_MouseDown(object sender, MouseEventArgs e)
+        private void LblEducational_MouseDown(object sender, MouseEventArgs e)
         {
-            btnEducational.BackgroundImage = Properties.Resources.Book2_2;
+            lblEducational.Image = Properties.Resources.Book2_2;
         }
 
-        private void BtnReligious_MouseHover(object sender, EventArgs e)
+        private void LblReligious_MouseHover(object sender, EventArgs e)
         {
-            btnReligious.BackgroundImage = Properties.Resources.Book7_0;
+            lblReligious.Image = Properties.Resources.Book7_0;
         }
 
-        private void BtnReligious_MouseLeave(object sender, EventArgs e)
+        private void LblReligious_MouseLeave(object sender, EventArgs e)
         {
-            btnReligious.BackgroundImage = Properties.Resources.Book7_1;
+            lblReligious.Image = Properties.Resources.Book7_1;
         }
 
-        private void BtnReligious_MouseDown(object sender, MouseEventArgs e)
+        private void LblReligious_MouseDown(object sender, MouseEventArgs e)
         {
-            btnReligious.BackgroundImage = Properties.Resources.Book7_2;
+            lblReligious.Image = Properties.Resources.Book7_2;
+        }
+
+        private void LblMilitary_MouseHover(object sender, EventArgs e)
+        {
+            lblMilitary.Image = Properties.Resources.Book9_0;
+        }
+
+        private void LblMilitary_MouseLeave(object sender, EventArgs e)
+        {
+            lblMilitary.Image = Properties.Resources.Book9_1;
+        }
+
+        private void LblMilitary_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblMilitary.Image = Properties.Resources.Book9_2;
+        }
+
+        private void LblPoetry_MouseHover(object sender, EventArgs e)
+        {
+            lblPoetry.Image = Properties.Resources.Book10_0;
+        }
+
+        private void LblPoetry_MouseLeave(object sender, EventArgs e)
+        {
+            lblPoetry.Image = Properties.Resources.Book10_1;
+        }
+
+        private void LblPoetry_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblPoetry.Image = Properties.Resources.Book10_2;
         }
 
         #endregion
+        
     }
 }

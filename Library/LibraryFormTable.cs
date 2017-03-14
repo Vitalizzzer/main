@@ -115,6 +115,10 @@ namespace Library
 
                 DataGridViewLibrary.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Aquamarine;
             }
+            else
+            {
+                _libraryToolTip.Close();
+            }
 
         }
 

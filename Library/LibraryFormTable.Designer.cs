@@ -55,7 +55,7 @@
             this.dataGridViewLibrary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Calligraphy", 13F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Calligraphy", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -64,7 +64,7 @@
             this.dataGridViewLibrary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Calligraphy", 13F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Calligraphy", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -89,6 +89,7 @@
             this.dataGridViewLibrary.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.LibraryFormTable_RowsRemoved);
             this.dataGridViewLibrary.Sorted += new System.EventHandler(this.LibraryFormTable_Sorted);
             this.dataGridViewLibrary.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Row_Delete);
+            this.dataGridViewLibrary.Click += new System.EventHandler(this.DataGridView_MouseLeave);
             this.dataGridViewLibrary.Leave += new System.EventHandler(this.DataGridView_MouseLeave);
             this.dataGridViewLibrary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DataGridView_MouseRightClick);
             this.dataGridViewLibrary.MouseLeave += new System.EventHandler(this.DataGridView_MouseLeave);

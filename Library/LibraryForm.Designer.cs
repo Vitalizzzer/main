@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryForm));
-            this.btnDrama = new System.Windows.Forms.Button();
-            this.btnSciFi = new System.Windows.Forms.Button();
-            this.btnAdventures = new System.Windows.Forms.Button();
-            this.btnBiography = new System.Windows.Forms.Button();
-            this.btnChild = new System.Windows.Forms.Button();
-            this.btnReference = new System.Windows.Forms.Button();
-            this.btnEducational = new System.Windows.Forms.Button();
-            this.btnReligious = new System.Windows.Forms.Button();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -57,184 +49,19 @@
             this.lblShowAll = new System.Windows.Forms.Label();
             this.lblWishList = new System.Windows.Forms.Label();
             this.lblExport = new System.Windows.Forms.Label();
+            this.lblMilitary = new System.Windows.Forms.Label();
+            this.lblPoetry = new System.Windows.Forms.Label();
+            this.lblDrama = new System.Windows.Forms.Label();
+            this.lblAdventures = new System.Windows.Forms.Label();
+            this.lblBiography = new System.Windows.Forms.Label();
+            this.lblReference = new System.Windows.Forms.Label();
+            this.lblSciFi = new System.Windows.Forms.Label();
+            this.lblChild = new System.Windows.Forms.Label();
+            this.lblEducational = new System.Windows.Forms.Label();
+            this.lblReligious = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPic)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnDrama
-            // 
-            this.btnDrama.BackColor = System.Drawing.Color.Transparent;
-            this.btnDrama.BackgroundImage = global::Library.Properties.Resources.Book1_1;
-            this.btnDrama.FlatAppearance.BorderSize = 0;
-            this.btnDrama.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDrama.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDrama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDrama.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrama.ForeColor = System.Drawing.Color.Bisque;
-            this.btnDrama.Location = new System.Drawing.Point(13, 385);
-            this.btnDrama.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDrama.Name = "btnDrama";
-            this.btnDrama.Size = new System.Drawing.Size(200, 50);
-            this.btnDrama.TabIndex = 12;
-            this.btnDrama.Text = "Drama";
-            this.btnDrama.UseVisualStyleBackColor = false;
-            this.btnDrama.Click += new System.EventHandler(this.btnDrama_Click);
-            this.btnDrama.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnDrama_MouseDown);
-            this.btnDrama.MouseLeave += new System.EventHandler(this.BtnDrama_MouseLeave);
-            this.btnDrama.MouseHover += new System.EventHandler(this.BtnDrama_MouseHover);
-            // 
-            // btnSciFi
-            // 
-            this.btnSciFi.BackColor = System.Drawing.Color.Transparent;
-            this.btnSciFi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSciFi.BackgroundImage")));
-            this.btnSciFi.FlatAppearance.BorderSize = 0;
-            this.btnSciFi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSciFi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSciFi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSciFi.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSciFi.ForeColor = System.Drawing.Color.Navy;
-            this.btnSciFi.Location = new System.Drawing.Point(13, 515);
-            this.btnSciFi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSciFi.Name = "btnSciFi";
-            this.btnSciFi.Size = new System.Drawing.Size(200, 50);
-            this.btnSciFi.TabIndex = 13;
-            this.btnSciFi.Text = "Science Fiction";
-            this.btnSciFi.UseVisualStyleBackColor = false;
-            this.btnSciFi.Click += new System.EventHandler(this.btnSciFi_Click);
-            this.btnSciFi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnSciFi_MouseDown);
-            this.btnSciFi.MouseLeave += new System.EventHandler(this.BtnSciFi_MouseLeave);
-            this.btnSciFi.MouseHover += new System.EventHandler(this.BtnSciFi_MouseHover);
-            // 
-            // btnAdventures
-            // 
-            this.btnAdventures.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdventures.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdventures.BackgroundImage")));
-            this.btnAdventures.FlatAppearance.BorderSize = 0;
-            this.btnAdventures.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAdventures.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAdventures.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdventures.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdventures.ForeColor = System.Drawing.Color.SkyBlue;
-            this.btnAdventures.Location = new System.Drawing.Point(282, 385);
-            this.btnAdventures.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdventures.Name = "btnAdventures";
-            this.btnAdventures.Size = new System.Drawing.Size(200, 50);
-            this.btnAdventures.TabIndex = 14;
-            this.btnAdventures.Text = "Adventures";
-            this.btnAdventures.UseVisualStyleBackColor = false;
-            this.btnAdventures.Click += new System.EventHandler(this.btnAdventures_Click);
-            this.btnAdventures.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnAdventures_MouseDown);
-            this.btnAdventures.MouseLeave += new System.EventHandler(this.BtnAdventures_MouseLeave);
-            this.btnAdventures.MouseHover += new System.EventHandler(this.BtnAdventures_MouseHover);
-            // 
-            // btnBiography
-            // 
-            this.btnBiography.BackColor = System.Drawing.Color.Transparent;
-            this.btnBiography.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBiography.BackgroundImage")));
-            this.btnBiography.FlatAppearance.BorderSize = 0;
-            this.btnBiography.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBiography.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBiography.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBiography.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBiography.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnBiography.Location = new System.Drawing.Point(13, 442);
-            this.btnBiography.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBiography.Name = "btnBiography";
-            this.btnBiography.Size = new System.Drawing.Size(200, 65);
-            this.btnBiography.TabIndex = 16;
-            this.btnBiography.Text = "Biography Historic";
-            this.btnBiography.UseVisualStyleBackColor = false;
-            this.btnBiography.Click += new System.EventHandler(this.btnBiography_Click);
-            this.btnBiography.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnBiography_MouseDown);
-            this.btnBiography.MouseLeave += new System.EventHandler(this.BtnBiography_MouseLeave);
-            this.btnBiography.MouseHover += new System.EventHandler(this.BtnBiography_MouseHover);
-            // 
-            // btnChild
-            // 
-            this.btnChild.BackColor = System.Drawing.Color.Transparent;
-            this.btnChild.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChild.BackgroundImage")));
-            this.btnChild.FlatAppearance.BorderSize = 0;
-            this.btnChild.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnChild.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnChild.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChild.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChild.ForeColor = System.Drawing.Color.Orange;
-            this.btnChild.Location = new System.Drawing.Point(282, 515);
-            this.btnChild.Margin = new System.Windows.Forms.Padding(4);
-            this.btnChild.Name = "btnChild";
-            this.btnChild.Size = new System.Drawing.Size(200, 50);
-            this.btnChild.TabIndex = 18;
-            this.btnChild.Text = "For Children";
-            this.btnChild.UseVisualStyleBackColor = false;
-            this.btnChild.Click += new System.EventHandler(this.btnChild_Click);
-            this.btnChild.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnChild_MouseDown);
-            this.btnChild.MouseLeave += new System.EventHandler(this.BtnChild_MouseLeave);
-            this.btnChild.MouseHover += new System.EventHandler(this.BtnChild_MouseHover);
-            // 
-            // btnReference
-            // 
-            this.btnReference.BackColor = System.Drawing.Color.Transparent;
-            this.btnReference.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReference.BackgroundImage")));
-            this.btnReference.FlatAppearance.BorderSize = 0;
-            this.btnReference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnReference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnReference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReference.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReference.Location = new System.Drawing.Point(281, 442);
-            this.btnReference.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReference.Name = "btnReference";
-            this.btnReference.Size = new System.Drawing.Size(200, 65);
-            this.btnReference.TabIndex = 19;
-            this.btnReference.Text = "Reference Guides";
-            this.btnReference.UseVisualStyleBackColor = false;
-            this.btnReference.Click += new System.EventHandler(this.btnReference_Click);
-            this.btnReference.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnReference_MouseDown);
-            this.btnReference.MouseLeave += new System.EventHandler(this.BtnReference_MouseLeave);
-            this.btnReference.MouseHover += new System.EventHandler(this.BtnReference_MouseHover);
-            // 
-            // btnEducational
-            // 
-            this.btnEducational.BackColor = System.Drawing.Color.Transparent;
-            this.btnEducational.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEducational.BackgroundImage")));
-            this.btnEducational.FlatAppearance.BorderSize = 0;
-            this.btnEducational.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEducational.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEducational.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEducational.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEducational.ForeColor = System.Drawing.Color.Pink;
-            this.btnEducational.Location = new System.Drawing.Point(14, 573);
-            this.btnEducational.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEducational.Name = "btnEducational";
-            this.btnEducational.Size = new System.Drawing.Size(200, 50);
-            this.btnEducational.TabIndex = 20;
-            this.btnEducational.Text = "Educational";
-            this.btnEducational.UseVisualStyleBackColor = false;
-            this.btnEducational.Click += new System.EventHandler(this.btnEducational_Click);
-            this.btnEducational.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnEducational_MouseDown);
-            this.btnEducational.MouseLeave += new System.EventHandler(this.BtnEducational_MouseLeave);
-            this.btnEducational.MouseHover += new System.EventHandler(this.BtnEducational_MouseHover);
-            // 
-            // btnReligious
-            // 
-            this.btnReligious.BackColor = System.Drawing.Color.Transparent;
-            this.btnReligious.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReligious.BackgroundImage")));
-            this.btnReligious.FlatAppearance.BorderSize = 0;
-            this.btnReligious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnReligious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnReligious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReligious.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReligious.ForeColor = System.Drawing.Color.Crimson;
-            this.btnReligious.Location = new System.Drawing.Point(282, 573);
-            this.btnReligious.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReligious.Name = "btnReligious";
-            this.btnReligious.Size = new System.Drawing.Size(200, 50);
-            this.btnReligious.TabIndex = 23;
-            this.btnReligious.Text = "Religious";
-            this.btnReligious.UseVisualStyleBackColor = false;
-            this.btnReligious.Click += new System.EventHandler(this.btnReligious_Click);
-            this.btnReligious.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnReligious_MouseDown);
-            this.btnReligious.MouseLeave += new System.EventHandler(this.BtnReligious_MouseLeave);
-            this.btnReligious.MouseHover += new System.EventHandler(this.BtnReligious_MouseHover);
             // 
             // txtNote
             // 
@@ -250,7 +77,7 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtNote.Size = new System.Drawing.Size(592, 684);
+            this.txtNote.Size = new System.Drawing.Size(592, 709);
             this.txtNote.TabIndex = 22;
             this.txtNote.Visible = false;
             this.txtNote.TextChanged += new System.EventHandler(this.txtNote_WriteToFile);
@@ -457,7 +284,7 @@
             this.lblShowAll.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowAll.ForeColor = System.Drawing.Color.Transparent;
             this.lblShowAll.Image = global::Library.Properties.Resources.ShowAllOrig;
-            this.lblShowAll.Location = new System.Drawing.Point(23, 631);
+            this.lblShowAll.Location = new System.Drawing.Point(22, 659);
             this.lblShowAll.Name = "lblShowAll";
             this.lblShowAll.Size = new System.Drawing.Size(210, 30);
             this.lblShowAll.TabIndex = 38;
@@ -474,7 +301,7 @@
             this.lblWishList.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWishList.ForeColor = System.Drawing.Color.Transparent;
             this.lblWishList.Image = global::Library.Properties.Resources.ShowAllOrig;
-            this.lblWishList.Location = new System.Drawing.Point(264, 631);
+            this.lblWishList.Location = new System.Drawing.Point(265, 659);
             this.lblWishList.Name = "lblWishList";
             this.lblWishList.Size = new System.Drawing.Size(210, 30);
             this.lblWishList.TabIndex = 39;
@@ -491,7 +318,7 @@
             this.lblExport.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExport.ForeColor = System.Drawing.Color.Transparent;
             this.lblExport.Image = global::Library.Properties.Resources.ExportAllBooksOrig;
-            this.lblExport.Location = new System.Drawing.Point(32, 669);
+            this.lblExport.Location = new System.Drawing.Point(32, 694);
             this.lblExport.Name = "lblExport";
             this.lblExport.Size = new System.Drawing.Size(430, 40);
             this.lblExport.TabIndex = 40;
@@ -502,6 +329,175 @@
             this.lblExport.MouseLeave += new System.EventHandler(this.LblExport_MouseLeave);
             this.lblExport.MouseHover += new System.EventHandler(this.LblExport_MouseHover);
             // 
+            // lblMilitary
+            // 
+            this.lblMilitary.BackColor = System.Drawing.Color.Transparent;
+            this.lblMilitary.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMilitary.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblMilitary.Image = global::Library.Properties.Resources.Book9_1;
+            this.lblMilitary.Location = new System.Drawing.Point(13, 599);
+            this.lblMilitary.Name = "lblMilitary";
+            this.lblMilitary.Size = new System.Drawing.Size(200, 50);
+            this.lblMilitary.TabIndex = 41;
+            this.lblMilitary.Text = "Military Literature";
+            this.lblMilitary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMilitary.Click += new System.EventHandler(this.lblMilitary_Click);
+            this.lblMilitary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblMilitary_MouseDown);
+            this.lblMilitary.MouseLeave += new System.EventHandler(this.LblMilitary_MouseLeave);
+            this.lblMilitary.MouseHover += new System.EventHandler(this.LblMilitary_MouseHover);
+            // 
+            // lblPoetry
+            // 
+            this.lblPoetry.BackColor = System.Drawing.Color.Transparent;
+            this.lblPoetry.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoetry.ForeColor = System.Drawing.Color.Aquamarine;
+            this.lblPoetry.Image = global::Library.Properties.Resources.Book10_1;
+            this.lblPoetry.Location = new System.Drawing.Point(283, 599);
+            this.lblPoetry.Name = "lblPoetry";
+            this.lblPoetry.Size = new System.Drawing.Size(200, 50);
+            this.lblPoetry.TabIndex = 42;
+            this.lblPoetry.Text = "Poetry";
+            this.lblPoetry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPoetry.Click += new System.EventHandler(this.lblPoetry_Click);
+            this.lblPoetry.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblPoetry_MouseDown);
+            this.lblPoetry.MouseLeave += new System.EventHandler(this.LblPoetry_MouseLeave);
+            this.lblPoetry.MouseHover += new System.EventHandler(this.LblPoetry_MouseHover);
+            // 
+            // lblDrama
+            // 
+            this.lblDrama.BackColor = System.Drawing.Color.Transparent;
+            this.lblDrama.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrama.ForeColor = System.Drawing.Color.Bisque;
+            this.lblDrama.Image = global::Library.Properties.Resources.Book1_1;
+            this.lblDrama.Location = new System.Drawing.Point(13, 385);
+            this.lblDrama.Name = "lblDrama";
+            this.lblDrama.Size = new System.Drawing.Size(200, 40);
+            this.lblDrama.TabIndex = 43;
+            this.lblDrama.Text = "Drama";
+            this.lblDrama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDrama.Click += new System.EventHandler(this.lblDrama_Click);
+            this.lblDrama.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblDrama_MouseDown);
+            this.lblDrama.MouseLeave += new System.EventHandler(this.LblDrama_MouseLeave);
+            this.lblDrama.MouseHover += new System.EventHandler(this.LblDrama_MouseHover);
+            // 
+            // lblAdventures
+            // 
+            this.lblAdventures.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdventures.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdventures.ForeColor = System.Drawing.Color.SkyBlue;
+            this.lblAdventures.Image = global::Library.Properties.Resources.Book6_1;
+            this.lblAdventures.Location = new System.Drawing.Point(282, 385);
+            this.lblAdventures.Name = "lblAdventures";
+            this.lblAdventures.Size = new System.Drawing.Size(200, 40);
+            this.lblAdventures.TabIndex = 44;
+            this.lblAdventures.Text = "Adventures";
+            this.lblAdventures.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAdventures.Click += new System.EventHandler(this.lblAdventures_Click);
+            this.lblAdventures.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblAdventures_MouseDown);
+            this.lblAdventures.MouseLeave += new System.EventHandler(this.LblAdventures_MouseLeave);
+            this.lblAdventures.MouseHover += new System.EventHandler(this.LblAdventures_MouseHover);
+            // 
+            // lblBiography
+            // 
+            this.lblBiography.BackColor = System.Drawing.Color.Transparent;
+            this.lblBiography.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBiography.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.lblBiography.Image = global::Library.Properties.Resources.Book3_1;
+            this.lblBiography.Location = new System.Drawing.Point(13, 432);
+            this.lblBiography.Name = "lblBiography";
+            this.lblBiography.Size = new System.Drawing.Size(200, 65);
+            this.lblBiography.TabIndex = 45;
+            this.lblBiography.Text = "Biography /Historic";
+            this.lblBiography.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBiography.Click += new System.EventHandler(this.lblBiography_Click);
+            this.lblBiography.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblBiography_MouseDown);
+            this.lblBiography.MouseLeave += new System.EventHandler(this.LblBiography_MouseLeave);
+            this.lblBiography.MouseHover += new System.EventHandler(this.LblBiography_MouseHover);
+            // 
+            // lblReference
+            // 
+            this.lblReference.BackColor = System.Drawing.Color.Transparent;
+            this.lblReference.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReference.Image = global::Library.Properties.Resources.Book5_1;
+            this.lblReference.Location = new System.Drawing.Point(283, 432);
+            this.lblReference.Name = "lblReference";
+            this.lblReference.Size = new System.Drawing.Size(200, 65);
+            this.lblReference.TabIndex = 46;
+            this.lblReference.Text = "Reference /Guides";
+            this.lblReference.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReference.Click += new System.EventHandler(this.lblReference_Click);
+            this.lblReference.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblReference_MouseDown);
+            this.lblReference.MouseLeave += new System.EventHandler(this.LblReference_MouseLeave);
+            this.lblReference.MouseHover += new System.EventHandler(this.LblReference_MouseHover);
+            // 
+            // lblSciFi
+            // 
+            this.lblSciFi.BackColor = System.Drawing.Color.Transparent;
+            this.lblSciFi.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSciFi.ForeColor = System.Drawing.Color.Navy;
+            this.lblSciFi.Image = global::Library.Properties.Resources.Book4_1;
+            this.lblSciFi.Location = new System.Drawing.Point(13, 505);
+            this.lblSciFi.Name = "lblSciFi";
+            this.lblSciFi.Size = new System.Drawing.Size(200, 40);
+            this.lblSciFi.TabIndex = 47;
+            this.lblSciFi.Text = "Science Fiction";
+            this.lblSciFi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSciFi.Click += new System.EventHandler(this.lblSciFi_Click);
+            this.lblSciFi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblSciFi_MouseDown);
+            this.lblSciFi.MouseLeave += new System.EventHandler(this.LblSciFi_MouseLeave);
+            this.lblSciFi.MouseHover += new System.EventHandler(this.LblSciFi_MouseHover);
+            // 
+            // lblChild
+            // 
+            this.lblChild.BackColor = System.Drawing.Color.Transparent;
+            this.lblChild.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChild.ForeColor = System.Drawing.Color.Orange;
+            this.lblChild.Image = global::Library.Properties.Resources.Book0_1;
+            this.lblChild.Location = new System.Drawing.Point(283, 504);
+            this.lblChild.Name = "lblChild";
+            this.lblChild.Size = new System.Drawing.Size(200, 40);
+            this.lblChild.TabIndex = 48;
+            this.lblChild.Text = "For Children";
+            this.lblChild.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChild.Click += new System.EventHandler(this.lblChild_Click);
+            this.lblChild.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblChild_MouseDown);
+            this.lblChild.MouseLeave += new System.EventHandler(this.LblChild_MouseLeave);
+            this.lblChild.MouseHover += new System.EventHandler(this.LblChild_MouseHover);
+            // 
+            // lblEducational
+            // 
+            this.lblEducational.BackColor = System.Drawing.Color.Transparent;
+            this.lblEducational.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEducational.ForeColor = System.Drawing.Color.Pink;
+            this.lblEducational.Image = global::Library.Properties.Resources.Book2_1;
+            this.lblEducational.Location = new System.Drawing.Point(13, 552);
+            this.lblEducational.Name = "lblEducational";
+            this.lblEducational.Size = new System.Drawing.Size(200, 40);
+            this.lblEducational.TabIndex = 49;
+            this.lblEducational.Text = "Educational";
+            this.lblEducational.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEducational.Click += new System.EventHandler(this.lblEducational_Click);
+            this.lblEducational.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblEducational_MouseDown);
+            this.lblEducational.MouseLeave += new System.EventHandler(this.LblEducational_MouseLeave);
+            this.lblEducational.MouseHover += new System.EventHandler(this.LblEducational_MouseHover);
+            // 
+            // lblReligious
+            // 
+            this.lblReligious.BackColor = System.Drawing.Color.Transparent;
+            this.lblReligious.Font = new System.Drawing.Font("Lucida Calligraphy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReligious.ForeColor = System.Drawing.Color.Crimson;
+            this.lblReligious.Image = global::Library.Properties.Resources.Book7_1;
+            this.lblReligious.Location = new System.Drawing.Point(283, 552);
+            this.lblReligious.Name = "lblReligious";
+            this.lblReligious.Size = new System.Drawing.Size(200, 40);
+            this.lblReligious.TabIndex = 50;
+            this.lblReligious.Text = "Religious";
+            this.lblReligious.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReligious.Click += new System.EventHandler(this.lblReligious_Click);
+            this.lblReligious.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblReligious_MouseDown);
+            this.lblReligious.MouseLeave += new System.EventHandler(this.LblReligious_MouseLeave);
+            this.lblReligious.MouseHover += new System.EventHandler(this.LblReligious_MouseHover);
+            // 
             // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -509,19 +505,21 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Library.Properties.Resources.LibraryForm_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1095, 718);
+            this.ClientSize = new System.Drawing.Size(1095, 743);
+            this.Controls.Add(this.lblReligious);
+            this.Controls.Add(this.lblEducational);
+            this.Controls.Add(this.lblChild);
+            this.Controls.Add(this.lblSciFi);
+            this.Controls.Add(this.lblReference);
+            this.Controls.Add(this.lblBiography);
+            this.Controls.Add(this.lblAdventures);
+            this.Controls.Add(this.lblDrama);
+            this.Controls.Add(this.lblPoetry);
+            this.Controls.Add(this.lblMilitary);
             this.Controls.Add(this.lblExport);
             this.Controls.Add(this.lblWishList);
             this.Controls.Add(this.lblShowAll);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnReference);
-            this.Controls.Add(this.btnReligious);
-            this.Controls.Add(this.btnChild);
-            this.Controls.Add(this.btnEducational);
-            this.Controls.Add(this.btnBiography);
-            this.Controls.Add(this.btnSciFi);
-            this.Controls.Add(this.btnAdventures);
-            this.Controls.Add(this.btnDrama);
             this.Controls.Add(this.txtNote);
             this.Font = new System.Drawing.Font("Lucida Calligraphy", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -538,14 +536,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnDrama;
-        private System.Windows.Forms.Button btnSciFi;
-        private System.Windows.Forms.Button btnAdventures;
-        private System.Windows.Forms.Button btnBiography;
-        private System.Windows.Forms.Button btnChild;
-        private System.Windows.Forms.Button btnReference;
-        private System.Windows.Forms.Button btnEducational;
-        private System.Windows.Forms.Button btnReligious;
+        //private System.Windows.Forms.Button lblAdventures;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.TextBox txtTitle;
@@ -565,6 +556,17 @@
         private System.Windows.Forms.Label lblShowAll;
         private System.Windows.Forms.Label lblWishList;
         private System.Windows.Forms.Label lblExport;
+        private System.Windows.Forms.Label lblMilitary;
+        private System.Windows.Forms.Label lblPoetry;
+        private System.Windows.Forms.Label lblDrama;
+        private System.Windows.Forms.Label lblAdventures;
+        private System.Windows.Forms.Label lblBiography;
+        private System.Windows.Forms.Label lblReference;
+        private System.Windows.Forms.Label lblSciFi;
+        private System.Windows.Forms.Label lblChild;
+        private System.Windows.Forms.Label lblEducational;
+        private System.Windows.Forms.Label lblReligious;
+       // private System.Windows.Forms.Label lblAdventures;
     }
 }
 
