@@ -55,16 +55,17 @@
             this.dataGridViewLibrary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Calligraphy", 13F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Calligraphy", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewLibrary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewLibrary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLibrary.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Calligraphy", 13F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Calligraphy", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -81,6 +82,7 @@
             this.dataGridViewLibrary.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Lucida Calligraphy", 13F);
             this.dataGridViewLibrary.RowTemplate.Height = 30;
             this.dataGridViewLibrary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLibrary.ShowCellToolTips = false;
             this.dataGridViewLibrary.Size = new System.Drawing.Size(1370, 630);
             this.dataGridViewLibrary.TabIndex = 0;
             this.dataGridViewLibrary.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellMouseLeave);
@@ -89,6 +91,7 @@
             this.dataGridViewLibrary.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.LibraryFormTable_RowsRemoved);
             this.dataGridViewLibrary.Sorted += new System.EventHandler(this.LibraryFormTable_Sorted);
             this.dataGridViewLibrary.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Row_Delete);
+            this.dataGridViewLibrary.Click += new System.EventHandler(this.DataGridView_MouseLeave);
             this.dataGridViewLibrary.Leave += new System.EventHandler(this.DataGridView_MouseLeave);
             this.dataGridViewLibrary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DataGridView_MouseRightClick);
             this.dataGridViewLibrary.MouseLeave += new System.EventHandler(this.DataGridView_MouseLeave);

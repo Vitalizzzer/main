@@ -31,7 +31,9 @@ namespace Library
 
         #endregion
 
-        // create db file if it does not exist
+        /// <summary>
+        /// create SQLite database file if it does not exist
+        /// </summary>
         public void DbFileCreation()
         {
             if (!File.Exists(LibraryDb))
@@ -40,14 +42,17 @@ namespace Library
             }
         }
 
-        // create db table
+        /// <summary>
+        /// create SQLite database table
+        /// </summary>
+ 
         public void DbTableCreation()
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
-                    SQLiteCommand cmd = new SQLiteCommand(CreateTable, connection);
+                    var cmd = new SQLiteCommand(CreateTable, connection);
 
                     connection.Open();
                     cmd.ExecuteNonQuery();
@@ -60,14 +65,23 @@ namespace Library
             }
         }
 
-        // add a book into database
+        /// <summary>
+        /// add a book into database
+        /// </summary>
+        /// <param name="author">author of the book</param>
+        /// <param name="title">title of the book</param>
+        /// <param name="genre">genre of the book</param>
+        /// <param name="date">date when the book was purchased</param>
+        /// <param name="info">information about the book</param>
+        /// <param name="pic">book's cover</param>
+ 
         public void AddBookToDb(string author, string title, string genre, string date, string info, byte[] pic)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
-                    SQLiteCommand cmd = new SQLiteCommand(Insert, connection);
+                    var cmd = new SQLiteCommand(Insert, connection);
                     cmd.Parameters.AddWithValue("@author", author);
                     cmd.Parameters.AddWithValue("@title", title);
                     cmd.Parameters.AddWithValue("@genre", genre);
@@ -94,16 +108,20 @@ namespace Library
             }
         }
 
-        // show all books
+        /// <summary>
+        /// show all books in data grid view table
+        /// </summary>
+        /// <param name="dataGridViewLibrary">data grid view table</param>
+ 
         public void ShowAll(DataGridView dataGridViewLibrary)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
                     connection.Open();
-                    DataTable dataTableLibrary = new DataTable();
-                    SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(SelectAll, connection);
+                    var dataTableLibrary = new DataTable();
+                    var dataAdapter = new SQLiteDataAdapter(SelectAll, connection);
                     dataAdapter.Fill(dataTableLibrary);
                     dataGridViewLibrary.DataSource = dataTableLibrary;
                     connection.Close();
@@ -115,16 +133,21 @@ namespace Library
             }
         }
 
-        // populate data table with rows filtered by genre
+        /// <summary>
+        /// populate data table with rows filtered by genre
+        /// </summary>
+        /// <param name="genre">genre of the books</param>
+        /// <param name="dataGridViewLibrary">data grid view table</param>
+ 
         public void FilterDbByGenre(string genre, DataGridView dataGridViewLibrary)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
                     connection.Open();
-                    DataTable dataTableLibrary = new DataTable();
-                    SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(FilterGenre, connection);
+                    var dataTableLibrary = new DataTable();
+                    var dataAdapter = new SQLiteDataAdapter(FilterGenre, connection);
                     dataAdapter.SelectCommand.Parameters.AddWithValue("@genre", genre);
                     dataAdapter.Fill(dataTableLibrary);
                     dataGridViewLibrary.DataSource = dataTableLibrary;
@@ -137,14 +160,24 @@ namespace Library
             }
         }
 
-        // update table with data enetered into cell
+        /// <summary>
+        /// update table with data enetered into cell
+        /// </summary>
+        /// <param name="id">id of the row</param>
+        /// <param name="author">author of the book</param>
+        /// <param name="title">title of the book</param>
+        /// <param name="genre">genre of the book</param>
+        /// <param name="date">date when the book was purchased</param>
+        /// <param name="info">information about the book</param>
+        /// <param name="pic">book's cover</param>
+ 
         public void UpdateRows(int id, string author, string title, string genre, string date, string info, byte[] pic)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
-                    SQLiteCommand cmd = new SQLiteCommand(UpdateRow, connection);
+                    var cmd = new SQLiteCommand(UpdateRow, connection);
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@author", author);
                     cmd.Parameters.AddWithValue("@title", title);
@@ -173,14 +206,18 @@ namespace Library
             }
         }
 
-        // delete selected rows from table
+        /// <summary>
+        /// delete selected rows from table
+        /// </summary>
+        /// <param name="id">id of the row</param>
+ 
         public void DeleteRows(int id)
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
-                    SQLiteCommand cmd = new SQLiteCommand(DeleteRow, connection);
+                    var cmd = new SQLiteCommand(DeleteRow, connection);
                     cmd.Parameters.AddWithValue("@id", id);
                     connection.Open();
                     cmd.ExecuteNonQuery();
@@ -193,17 +230,21 @@ namespace Library
             }
         }
 
-        // export rows from database
+        /// <summary>
+        /// export rows from database
+        /// </summary>
+        /// <returns>collection of rows</returns>
+ 
         public DataRowCollection ExtractRowsFromDb()
         {
             DataRowCollection rows = null;
 
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
-                    SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(SelectAll, connection);
-                    DataSet dataSet = new DataSet();
+                    var dataAdapter = new SQLiteDataAdapter(SelectAll, connection);
+                    var dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     rows = dataSet.Tables[0].Rows;
                 }
@@ -215,18 +256,22 @@ namespace Library
             return rows;
         }
 
-        // export column names from database 
+        /// <summary>
+        /// export column names from database
+        /// </summary>
+        /// <returns>array list of columns' names</returns>
+  
         public ArrayList ExtractColumnsNames()
         {
             ArrayList columnsArray = null;
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
                     connection.Open();
-                    using (SQLiteCommand cmd = new SQLiteCommand(SelectAll, connection))
+                    using (var cmd = new SQLiteCommand(SelectAll, connection))
                     {
-                        using (SQLiteDataReader dataReader = cmd.ExecuteReader())
+                        using (var dataReader = cmd.ExecuteReader())
                         {
                             columnsArray = new ArrayList
                             {
@@ -250,19 +295,25 @@ namespace Library
             return columnsArray;
         }
 
-        // read data from BLOB cell
+        /// <summary>
+        /// read data from BLOB cell
+        /// </summary>
+        /// <param name="pictureBox">picture box in main form window</param>
+        /// <param name="id">id of the row</param>
+        /// <returns>encoded picture in bytes</returns>
+ 
         public byte[] ReadBlobCell(PictureBox pictureBox, string id)
         {
             byte[] data = null;
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
                     connection.Open();
-                    SQLiteCommand cmd = new SQLiteCommand(SelectBlobCell, connection);
+                    var cmd = new SQLiteCommand(SelectBlobCell, connection);
                     cmd.Parameters.AddWithValue("@id", id);
 
-                    DBNull dbNull = DBNull.Value;
+                    var dbNull = DBNull.Value;
 
                     // execule only if image exists in database
                     if (!cmd.ExecuteScalar().Equals(dbNull))
@@ -273,7 +324,7 @@ namespace Library
                     // display image in picture box
                     if (data != null)
                     {
-                        MemoryStream ms = new MemoryStream(data);
+                        var ms = new MemoryStream(data);
                         pictureBox.Image = Image.FromStream(ms, true);
                     }
 

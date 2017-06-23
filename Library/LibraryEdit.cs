@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,7 +14,7 @@ namespace Library
             _genre = genre;
             _date = date;
             _info = info;
-            Load += LibraryEdit_Load;
+            //Load += LibraryEdit_Load;
             InitializeComponent();
         }
 
@@ -30,7 +29,6 @@ namespace Library
         private byte[] _pic;
 
         private readonly SqlQueries _sqlQueries = new SqlQueries();
-        private readonly LibraryForm _libraryForm = new LibraryForm();
         private readonly LibraryInfra _libraryInfra = new LibraryInfra();
 
         #endregion
@@ -63,7 +61,7 @@ namespace Library
         private void CmbGenre_Click(object sender, EventArgs e)
         {
             cmbEditGenre.Items.Clear();
-            cmbEditGenre.Items.AddRange(_libraryForm.GenresArray());
+            cmbEditGenre.Items.AddRange(Genres.GenresDictionary().Values.ToArray());
         }
 
         private void pbxPicEdit_Click(object sender, EventArgs e)
@@ -80,6 +78,7 @@ namespace Library
                 MessageBox.Show(@"Please fill in all cells.");
                 return;
             }
+
             if (txtEditAuthor.Text.StartsWith(" ") || txtEditTitle.Text.StartsWith(" "))
             {
                 MessageBox.Show(@"One or a few fields have space at the beginning. The changes won't be saved!");

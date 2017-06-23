@@ -6,14 +6,12 @@ namespace Library
 {
     public partial class LibraryToolTip : Form
     {
-        // constructor
-        public LibraryToolTip(string rowId, string cellValue, int positionX, int positionY)
+        public LibraryToolTip(string rowId, string infoCellValue, int positionX, int positionY)
         {
             _rowId = rowId;
-            _cellValue = cellValue;
+            _infoCellValue = infoCellValue;
             _positionX = positionX;
             _positionY = positionY;
-
             InitializeComponent();
         }
 
@@ -23,7 +21,7 @@ namespace Library
         private readonly int _positionY;
 
         private readonly string _rowId;
-        private readonly string _cellValue;
+        private readonly string _infoCellValue;
 
         private readonly SqlQueries _sqlQueries = new SqlQueries();
 
@@ -33,7 +31,7 @@ namespace Library
         {
             // define form position within the screen
             var workingRectangle = Screen.PrimaryScreen.WorkingArea;
-
+            
             if (_positionX + Width >= workingRectangle.Right)
             {
                 if (_positionY + Height >= workingRectangle.Bottom)
@@ -65,7 +63,7 @@ namespace Library
             }
 
             // display default text in text box if no info is present in db
-            if (_cellValue == string.Empty)
+            if (_infoCellValue == string.Empty)
             {
                 lblInfo.Text = @"No information about this book";
                 lblInfo.TextAlign = ContentAlignment.MiddleCenter;
@@ -73,7 +71,7 @@ namespace Library
             // display info if it is present in db
             else
             {
-                lblInfo.Text = _cellValue;
+                lblInfo.Text = _infoCellValue;
             }
         }
     }

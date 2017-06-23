@@ -139,10 +139,12 @@
             // 
             this.cmbEditGenre.BackColor = System.Drawing.Color.Honeydew;
             this.cmbEditGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEditGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbEditGenre.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEditGenre.FormattingEnabled = true;
             this.cmbEditGenre.Location = new System.Drawing.Point(113, 95);
             this.cmbEditGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbEditGenre.MaxDropDownItems = 10;
             this.cmbEditGenre.Name = "cmbEditGenre";
             this.cmbEditGenre.Size = new System.Drawing.Size(358, 32);
             this.cmbEditGenre.TabIndex = 42;
