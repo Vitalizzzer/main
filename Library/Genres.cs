@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Library
 {
@@ -18,27 +17,28 @@ namespace Library
         private const string Religious = "Religious";
         private const string Military = @"Military Literature";
         private const string Poetry = "Poetry";
-
+        public static List<string> GenreList { get; set; }
+        
         /// <summary>
-        /// Store genres into a dictionary
+        /// Store genres into a List
         /// </summary>
-        /// <returns>dictionary of genres</returns>
-        public static Dictionary<string, object> GenresDictionary()
+        /// <returns>list of genres</returns>
+        public static List<string> GenresList()
         {
-            var genresDictionary = new Dictionary<string, object>
+            GenreList = new List<string>
             {
-                {"drama", Drama},
-                {"adventures", Adventures},
-                {"scifi", SciFi},
-                {"biography", Biography},
-                {"child", Child},
-                {"reference", Reference},
-                {"educational", Educational},
-                {"religious", Religious},
-                {"military", Military},
-                {"poetry", Poetry}
+                Drama,
+                Adventures,
+                SciFi,
+                Biography,
+                Child,
+                Reference,
+                Educational,
+                Religious,
+                Military,
+                Poetry
             };
-            return genresDictionary;
+            return GenreList;
         }
     }
 }

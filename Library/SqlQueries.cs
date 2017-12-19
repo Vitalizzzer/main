@@ -3,12 +3,13 @@ using System.Collections;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
 namespace Library
 {
-    public class SqlQueries
+    public class SqlQueries : Base
     {
         #region FIELDS AND QUERIES
 
@@ -68,29 +69,27 @@ namespace Library
         /// <summary>
         /// add a book into database
         /// </summary>
-        /// <param name="author">author of the book</param>
-        /// <param name="title">title of the book</param>
-        /// <param name="genre">genre of the book</param>
-        /// <param name="date">date when the book was purchased</param>
-        /// <param name="info">information about the book</param>
-        /// <param name="pic">book's cover</param>
- 
-        public void AddBookToDb(string author, string title, string genre, string date, string info, byte[] pic)
+        /// <param name="book">book</param>
+        public void AddBookToDb(Book book)
         {
             try
             {
                 using (var connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
                 {
                     var cmd = new SQLiteCommand(Insert, connection);
-                    cmd.Parameters.AddWithValue("@author", author);
-                    cmd.Parameters.AddWithValue("@title", title);
-                    cmd.Parameters.AddWithValue("@genre", genre);
-                    cmd.Parameters.AddWithValue("@date", date);
-                    cmd.Parameters.AddWithValue("@info", info);
-                    if (pic != null)
+                    
+                    cmd.Parameters.AddWithValue("@author", book.Author);
+                    cmd.Parameters.AddWithValue("@title", book.Title);
+                    cmd.Parameters.AddWithValue("@genre", book.Genre);
+                    cmd.Parameters.AddWithValue("@date", book.Date);
+                    cmd.Parameters.AddWithValue("@info", book.Info);
+                    if (book.Pic != null)
                     {
-                        cmd.Parameters.Add("@pic", DbType.Binary, pic.Length);
-                        cmd.Parameters["@pic"].Value = pic;
+                        var ms = new MemoryStream();
+                        book.Pic.Save(ms, ImageFormat.Bmp);
+                        byte[] picByte = ms.ToArray();
+                        cmd.Parameters.Add("@pic", DbType.Binary, picByte.Length);
+                        cmd.Parameters["@pic"].Value = picByte;
                     }
                     else
                     {
@@ -112,7 +111,6 @@ namespace Library
         /// show all books in data grid view table
         /// </summary>
         /// <param name="dataGridViewLibrary">data grid view table</param>
- 
         public void ShowAll(DataGridView dataGridViewLibrary)
         {
             try
@@ -138,7 +136,6 @@ namespace Library
         /// </summary>
         /// <param name="genre">genre of the books</param>
         /// <param name="dataGridViewLibrary">data grid view table</param>
- 
         public void FilterDbByGenre(string genre, DataGridView dataGridViewLibrary)
         {
             try
@@ -151,12 +148,11 @@ namespace Library
                     dataAdapter.SelectCommand.Parameters.AddWithValue("@genre", genre);
                     dataAdapter.Fill(dataTableLibrary);
                     dataGridViewLibrary.DataSource = dataTableLibrary;
-                    connection.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show(@"Data source doesn't exist or inaccessible. Please, set correct connection string.");
+                MessageBox.Show(@"Data source doesn't exist or inaccessible. Please, set correct connection string." + e);
             }
         }
 
@@ -170,7 +166,6 @@ namespace Library
         /// <param name="date">date when the book was purchased</param>
         /// <param name="info">information about the book</param>
         /// <param name="pic">book's cover</param>
- 
         public void UpdateRows(int id, string author, string title, string genre, string date, string info, byte[] pic)
         {
             try
@@ -210,7 +205,6 @@ namespace Library
         /// delete selected rows from table
         /// </summary>
         /// <param name="id">id of the row</param>
- 
         public void DeleteRows(int id)
         {
             try
@@ -234,7 +228,6 @@ namespace Library
         /// export rows from database
         /// </summary>
         /// <returns>collection of rows</returns>
- 
         public DataRowCollection ExtractRowsFromDb()
         {
             DataRowCollection rows = null;
@@ -260,7 +253,6 @@ namespace Library
         /// export column names from database
         /// </summary>
         /// <returns>array list of columns' names</returns>
-  
         public ArrayList ExtractColumnsNames()
         {
             ArrayList columnsArray = null;
@@ -301,7 +293,6 @@ namespace Library
         /// <param name="pictureBox">picture box in main form window</param>
         /// <param name="id">id of the row</param>
         /// <returns>encoded picture in bytes</returns>
- 
         public byte[] ReadBlobCell(PictureBox pictureBox, string id)
         {
             byte[] data = null;
@@ -336,6 +327,31 @@ namespace Library
                 MessageBox.Show(e.ToString());
             }
             return data;
+        }
+
+        /// <summary>
+        /// Get DataTable from database
+        /// </summary>
+        /// <returns>data table</returns>
+        public DataTable GetDataTable()
+        {
+            DataTable dt = null;
+
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", LibraryDb)))
+                {
+                    SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(SelectAll, connection);
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet);
+                    dt = dataSet.Tables[0];
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return dt;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class LibraryEdit
+    partial class EditBookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryEdit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBookForm));
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblGenre = new System.Windows.Forms.Label();

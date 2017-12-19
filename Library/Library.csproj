@@ -39,6 +39,14 @@
     <ApplicationIcon>Book.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.80.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.80.1\lib\net40-client\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -73,46 +81,47 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Book.cs" />
     <Compile Include="Genres.cs" />
-    <Compile Include="LibraryEdit.cs">
+    <Compile Include="EditBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryEdit.Designer.cs">
-      <DependentUpon>LibraryEdit.cs</DependentUpon>
+    <Compile Include="EditBookForm.Designer.cs">
+      <DependentUpon>EditBookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LibraryFormTable.cs">
+    <Compile Include="TableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryFormTable.Designer.cs">
-      <DependentUpon>LibraryFormTable.cs</DependentUpon>
+    <Compile Include="TableForm.Designer.cs">
+      <DependentUpon>TableForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LibraryInfra.cs" />
-    <Compile Include="LibraryForm.cs">
+    <Compile Include="Base.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryForm.Designer.cs">
-      <DependentUpon>LibraryForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LibraryToolTip.cs">
+    <Compile Include="BookToolTipForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryToolTip.Designer.cs">
-      <DependentUpon>LibraryToolTip.cs</DependentUpon>
+    <Compile Include="BookToolTipForm.Designer.cs">
+      <DependentUpon>BookToolTipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlQueries.cs" />
-    <EmbeddedResource Include="LibraryEdit.resx">
-      <DependentUpon>LibraryEdit.cs</DependentUpon>
+    <EmbeddedResource Include="EditBookForm.resx">
+      <DependentUpon>EditBookForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryForm.resx">
-      <DependentUpon>LibraryForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryFormTable.resx">
-      <DependentUpon>LibraryFormTable.cs</DependentUpon>
+    <EmbeddedResource Include="TableForm.resx">
+      <DependentUpon>TableForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryToolTip.resx">
-      <DependentUpon>LibraryToolTip.cs</DependentUpon>
+    <EmbeddedResource Include="BookToolTipForm.resx">
+      <DependentUpon>BookToolTipForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

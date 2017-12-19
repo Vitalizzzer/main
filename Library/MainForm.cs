@@ -1,34 +1,31 @@
 ﻿using System;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class LibraryForm : Form
+    public partial class MainForm : Form
     {
         // constructor
-        public LibraryForm()
+        public MainForm()
         {
             InitializeComponent();
-            string note = _libraryInfra.ReadNotes(NoteFile);
+            var note = sqlQueries.ReadNotes(NoteFile);
             txtNote.Text = note;
         }
 
         #region FIELDS
 
-        private readonly SqlQueries _sqlQueries = new SqlQueries();
-        private readonly LibraryInfra _libraryInfra = new LibraryInfra();
-        private LibraryFormTable _libraryFormTable = new LibraryFormTable();
+        private readonly SqlQueries sqlQueries = new SqlQueries();
         private const string NoteFile = "Note.txt";
-        private int _clickCounter;
+        private int clickCounter;
 
         #endregion
 
         #region METHODS
 
-
+       
         /// <summary>
         ///  verify if author, title, genre and date fields are not empty and without spaces at the beginning 
         /// </summary>
@@ -48,9 +45,9 @@ namespace Library
             // spaces in fields verification
             if (!txtAuthor.Text.StartsWith(" ") && !txtTitle.Text.StartsWith(" ") && !dateTime.Text.StartsWith(" ") &&
                 !cmbGenre.Text.StartsWith(" ")) return false;
-                MessageBox.Show(@"One or a few fields have space at the beginning!");
-                return true;
-            }
+            MessageBox.Show(@"One or a few fields have space at the beginning!");
+            return true;
+        }
 
         /// <summary>
         /// implement functionality of "Open Table" check box
@@ -59,7 +56,7 @@ namespace Library
         {
             // open datagridview genre table with an added book
             if (checkBoxOpenTable.Checked)
-            {
+            {   
                 string item = cmbGenre.Text;
                 switch (item)
                 {
@@ -108,14 +105,12 @@ namespace Library
         /// read image from file system into bytes array
         /// </summary>
         /// <returns>encoded image in bytes</returns>
-        private byte[] ReadImageData()
+        private Bitmap ReadImageData()
         {
-            byte[] picData = null;
-            if (pbxPic.ImageLocation == null) return picData;
-                // read image from its location
-                string picPath = pbxPic.ImageLocation;
-                picData = File.ReadAllBytes(picPath);
-            return picData;
+            var picPath = pbxPic.ImageLocation;
+            if (picPath == null) return null;
+            var bmp = new Bitmap(picPath);
+            return bmp;
         }
 
         #endregion
@@ -129,22 +124,22 @@ namespace Library
                 return;
             }
 
-            var picData = ReadImageData();
-
+            var book = new Book(txtAuthor.Text, txtTitle.Text, cmbGenre.Text, dateTime.Text, txtInfo.Text,
+                ReadImageData());
             // add book to the library db
-            _sqlQueries.AddBookToDb(txtAuthor.Text, txtTitle.Text, cmbGenre.Text, dateTime.Text, txtInfo.Text, picData);
-
+            //sqlQueries.AddBookToDb(txtAuthor.Text, txtTitle.Text, cmbGenre.Text, dateTime.Text, txtInfo.Text, picData);
+            sqlQueries.AddBookToDb(book);
             OpenTableCheckBox();
 
             // clear the text fields
             txtAuthor.ResetText();
             txtTitle.ResetText();
-            cmbGenre.Items.Clear();
+            cmbGenre.DataSource = null;
             dateTime.ResetText();
             txtInfo.ResetText();
 
             // clear picture box
-            if (picData != null)
+            if (ReadImageData() != null)
             {
                 pbxPic.Image.Dispose();
                 pbxPic.ImageLocation = null;
@@ -157,96 +152,92 @@ namespace Library
 
         #region GENERES
 
+        public TableForm OpenLibraryFormTable(string genre)
+        {
+            var libraryFormTable = new TableForm();  
+            libraryFormTable.PopulateDataTable(genre);
+            return new TableForm();
+        }
+
         public void lblDrama_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["drama"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(0));
         }
 
         private void lblAdventures_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["adventures"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(1));
         }
 
         private void lblSciFi_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["scifi"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(2));
         }
 
         private void lblBiography_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["biography"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(3));
         }
 
         private void lblChild_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["child"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(4));
         }
 
         private void lblReference_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["reference"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(5));
         }
 
         private void lblEducational_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["educational"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(6));
         }
 
         private void lblReligious_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["religious"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(7));
         }
 
         private void lblMilitary_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["military"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(8));
         }
 
         private void lblPoetry_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable(Genres.GenresDictionary()["poetry"].ToString());
+            OpenLibraryFormTable(Genres.GenresList().ElementAt(9));
         }
 
         #endregion
 
         private void cmbGenre_DropDown(object sender, MouseEventArgs e)
         {
-            cmbGenre.Items.Clear();
-            cmbGenre.Items.AddRange(Genres.GenresDictionary().Values.ToArray());
+            cmbGenre.DataSource = Genres.GenresList();
         }
 
         private void lblExport_Click(object sender, EventArgs e)
         {
-            _libraryInfra.SaveToFile(_sqlQueries.ExtractColumnsNames(), _sqlQueries.ExtractRowsFromDb());
+            sqlQueries.SaveToExcel(sqlQueries.ExtractColumnsNames(), sqlQueries.ExtractRowsFromDb());
         }
 
         private void lblShowAll_Click(object sender, EventArgs e)
         {
-            _libraryFormTable = new LibraryFormTable();
-            _libraryFormTable.PopulateDataTable("");
-            _libraryFormTable.DataGridViewLibrary.Columns[3].Visible = true;
-            _libraryFormTable.DataGridViewLibrary.Columns[3].ReadOnly = true;
+            var libraryFormTable = new TableForm();
+            libraryFormTable.PopulateDataTable("");
+            libraryFormTable.DataGridViewLibrary.Columns[3].Visible = true;
+            libraryFormTable.DataGridViewLibrary.Columns[3].ReadOnly = true;
         }
 
         public void pbxPic_Click(object sender, EventArgs e)
         {
-            _libraryInfra.OpenImage(pbxPic);
+            sqlQueries.OpenImage(pbxPic);
         }
 
         private void lblWishList_Click(object sender, EventArgs e)
         {
-            _clickCounter++;
-            if (_clickCounter%2 == 0)
+            clickCounter++;
+            if (clickCounter%2 == 0)
             {
                 txtNote.Hide();
             }
@@ -265,7 +256,7 @@ namespace Library
 
         private void txtNote_WriteToFile(object sender, EventArgs e)
         {
-            _libraryInfra.WriteNotes(txtNote.Text, NoteFile);
+            sqlQueries.WriteNotes(txtNote.Text, NoteFile);
         }
 
         #endregion
@@ -487,6 +478,6 @@ namespace Library
         }
 
         #endregion
-        
+       
     }
 }

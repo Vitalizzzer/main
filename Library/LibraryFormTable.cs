@@ -92,9 +92,9 @@ namespace Library
 
             if (result != DialogResult.Yes) return;
             _rowId = int.Parse(DataGridViewLibrary[0, _currentMouseOverRow].Value.ToString());
-            _sqlQueries.DeleteRows(_rowId);
-            DataGridViewLibrary.Rows.Remove(DataGridViewLibrary.Rows[_currentMouseOverRow]);
-        }
+                   _sqlQueries.DeleteRows(_rowId);
+                   DataGridViewLibrary.Rows.Remove(DataGridViewLibrary.Rows[_currentMouseOverRow]);
+            }
 
         private void LibraryFormTable_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
@@ -112,7 +112,7 @@ namespace Library
                 string infoCellValue = DataGridViewLibrary[5, e.RowIndex].Value.ToString();
                 _libraryToolTip = new LibraryToolTip(rowId, infoCellValue, Cursor.Position.X, Cursor.Position.Y);
                 _libraryToolTip.Show();
-                
+
                 DataGridViewLibrary.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Aquamarine;
             }
             else if (_libraryToolTip != null)
@@ -123,8 +123,8 @@ namespace Library
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             if (_libraryToolTip == null) return;
-            _libraryToolTip.Hide();
-            _libraryToolTip.Close();
+                    _libraryToolTip.Hide();
+                    _libraryToolTip.Close();
 
             DataGridViewLibrary.Rows[e.RowIndex].DefaultCellStyle.BackColor = e.RowIndex%2 == 0 ? Color.Honeydew : Color.White;
         }
@@ -132,24 +132,24 @@ namespace Library
         private void DataGridView_MouseRightClick(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Right) return;
-            _currentMouseOverRow = DataGridViewLibrary.HitTest(e.X, e.Y).RowIndex;
+                _currentMouseOverRow = DataGridViewLibrary.HitTest(e.X, e.Y).RowIndex;
 
             if (_currentMouseOverRow < 0) return;
-            contextMenuStrip.Show(DataGridViewLibrary, new Point(e.X, e.Y));
+                    contextMenuStrip.Show(DataGridViewLibrary, new Point(e.X, e.Y));
 
-            dataGridViewLibrary.ClearSelection();
-            dataGridViewLibrary.Rows[_currentMouseOverRow].Selected = true;
+                    dataGridViewLibrary.ClearSelection();
+                    dataGridViewLibrary.Rows[_currentMouseOverRow].Selected = true;
 
             var rowId = int.Parse(DataGridViewLibrary[0, _currentMouseOverRow].Value.ToString());
-            string cellAuthorValue = DataGridViewLibrary[1, _currentMouseOverRow].Value.ToString();
-            string cellTitleValue = DataGridViewLibrary[2, _currentMouseOverRow].Value.ToString();
-            string cellGenreValue = DataGridViewLibrary[3, _currentMouseOverRow].Value.ToString();
-            string cellDateValue = DataGridViewLibrary[4, _currentMouseOverRow].Value.ToString();
-            string cellInfoValue = DataGridViewLibrary[5, _currentMouseOverRow].Value.ToString();
+                    string cellAuthorValue = DataGridViewLibrary[1, _currentMouseOverRow].Value.ToString();
+                    string cellTitleValue = DataGridViewLibrary[2, _currentMouseOverRow].Value.ToString();
+                    string cellGenreValue = DataGridViewLibrary[3, _currentMouseOverRow].Value.ToString();
+                    string cellDateValue = DataGridViewLibrary[4, _currentMouseOverRow].Value.ToString();
+                    string cellInfoValue = DataGridViewLibrary[5, _currentMouseOverRow].Value.ToString();
 
-            _libraryEdit = new LibraryEdit(rowId, cellAuthorValue, cellTitleValue, cellGenreValue, cellDateValue,
-                cellInfoValue);
-        }
+                    _libraryEdit = new LibraryEdit(rowId, cellAuthorValue, cellTitleValue, cellGenreValue, cellDateValue,
+                        cellInfoValue);
+                }
 
         private void EditMenu_click(object sender, EventArgs e)
         {
@@ -164,9 +164,9 @@ namespace Library
         private void DataGridView_MouseLeave(object sender, EventArgs e)
         {
             if (_libraryToolTip == null) return;
-            _libraryToolTip.Hide();
-            _libraryToolTip.Close();
-        }
+                _libraryToolTip.Hide();
+                _libraryToolTip.Close();
+            }
 
         #endregion
 

@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class LibraryForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -159,7 +159,6 @@
             this.pbxPic.TabIndex = 34;
             this.pbxPic.TabStop = false;
             this.pbxPic.Click += new System.EventHandler(this.pbxPic_Click);
-            //this.pbxPic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pbxPic_DeleteKeyDown);
             // 
             // lblInfo
             // 

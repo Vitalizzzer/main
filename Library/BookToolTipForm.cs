@@ -4,26 +4,25 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class LibraryToolTip : Form
+    public partial class BookToolTipForm : Form
     {
-        public LibraryToolTip(string rowId, string infoCellValue, int positionX, int positionY)
+        public BookToolTipForm(string rowId, string infoCellValue, int positionX, int positionY)
         {
-            _rowId = rowId;
-            _infoCellValue = infoCellValue;
-            _positionX = positionX;
-            _positionY = positionY;
+            this.rowId = rowId;
+            this.infoCellValue = infoCellValue;
+            this.positionX = positionX;
+            this.positionY = positionY;
             InitializeComponent();
         }
 
         #region FIELDS
 
-        private readonly int _positionX;
-        private readonly int _positionY;
+        private readonly SqlQueries sqlQueries = new SqlQueries();
+        private readonly int positionX;
+        private readonly int positionY;
 
-        private readonly string _rowId;
-        private readonly string _infoCellValue;
-
-        private readonly SqlQueries _sqlQueries = new SqlQueries();
+        private readonly string rowId;
+        private readonly string infoCellValue;
 
         #endregion
 
@@ -32,29 +31,29 @@ namespace Library
             // define form position within the screen
             var workingRectangle = Screen.PrimaryScreen.WorkingArea;
             
-            if (_positionX + Width >= workingRectangle.Right)
+            if (positionX + Width >= workingRectangle.Right)
             {
-                if (_positionY + Height >= workingRectangle.Bottom)
+                if (positionY + Height >= workingRectangle.Bottom)
                 {
-                    SetDesktopLocation(_positionX - Width, _positionY - Height);
+                    SetDesktopLocation(positionX - Width, positionY - Height);
                 }
                 else
                 {
-                    SetDesktopLocation(_positionX - Width, _positionY);
+                    SetDesktopLocation(positionX - Width, positionY);
                 }
             }
 
-            else if (_positionY + Height >= workingRectangle.Bottom)
+            else if (positionY + Height >= workingRectangle.Bottom)
             {
-                SetDesktopLocation(_positionX, _positionY - Height);
+                SetDesktopLocation(positionX, positionY - Height);
             }
             else
             {
-                SetDesktopLocation(_positionX, _positionY);
+                SetDesktopLocation(positionX, positionY);
             }
 
             // display image in the picture box if it is present in db
-            var data = _sqlQueries.ReadBlobCell(pictureBox, _rowId);
+            var data = sqlQueries.ReadBlobCell(pictureBox, rowId);
 
             // display default image in the picture box if no picture is present in db
             if (data == null)
@@ -63,7 +62,7 @@ namespace Library
             }
 
             // display default text in text box if no info is present in db
-            if (_infoCellValue == string.Empty)
+            if (infoCellValue == string.Empty)
             {
                 lblInfo.Text = @"No information about this book";
                 lblInfo.TextAlign = ContentAlignment.MiddleCenter;
@@ -71,7 +70,7 @@ namespace Library
             // display info if it is present in db
             else
             {
-                lblInfo.Text = _infoCellValue;
+                lblInfo.Text = infoCellValue;
             }
         }
     }

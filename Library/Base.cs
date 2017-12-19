@@ -3,14 +3,14 @@ using System.Collections;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 
 namespace Library
 {
-    public class LibraryInfra
+    public class Base
     {
         /// <summary>
         /// set data grid view rows numeration
@@ -22,7 +22,10 @@ namespace Library
             {
                 foreach (DataGridViewRow row in dataGridView.Rows)
                 {
-                    row.HeaderCell.Value = (row.Index + 1).ToString();
+                    if (!row.Equals(null))
+                    {
+                        row.HeaderCell.Value = row.HeaderCell.Value = (row.Index + 1).ToString();
+                    }
                 }
                 dataGridView.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
             }
@@ -41,8 +44,8 @@ namespace Library
         {
             try
             {
-                using (FileStream fs = File.Open(noteFile, FileMode.Create))
-                using (StreamWriter sw = new StreamWriter(fs))
+                using (var fs = File.Open(noteFile, FileMode.Create))
+                using (var sw = new StreamWriter(fs))
                 {
                     sw.Write(note);
                     sw.Close();
@@ -97,7 +100,6 @@ namespace Library
         /// open an image from file system into a picture box
         /// </summary>
         /// <param name="picBox">picture box in main form window</param>
- 
         public void OpenImage(PictureBox picBox)
         {
             var openFileDialog = new OpenFileDialog
@@ -135,7 +137,6 @@ namespace Library
         /// </summary>
         /// <param name="picBox">picture box in main form window</param>
         /// <returns>encoded picture in bytes</returns>
- 
         public byte[] ReadImageFromPictureBox(PictureBox picBox)
         {
             byte[] picture = null;
@@ -158,50 +159,33 @@ namespace Library
         /// </summary>
         /// <param name="columns">library columns</param>
         /// <param name="rows">library rows</param>
- 
-        public void SaveToFile(ArrayList columns, DataRowCollection rows)
+        public void SaveToExcel(ArrayList columns, DataRowCollection rows)
         {
             var saveAsDialog = new SaveFileDialog()
             {
                 Title = @"Save As",
-                FileName = "Library.csv",
+                FileName = "Library.xlsx",
                 OverwritePrompt = true,
-                Filter = @"Comma-Separated Values (*.csv)|*.csv|Text Documents (*.txt)|*.txt|MS Word Document (*.docs)|*.doc"
+                Filter = @"Excel Workbook (*.xlsx)|*.xlsx"
             };
 
-            if (saveAsDialog.ShowDialog() != DialogResult.OK) return;
-            try
+            if (saveAsDialog.ShowDialog() == DialogResult.OK)
             {
-                using (var streamWriter = new StreamWriter(saveAsDialog.FileName))
+                XLWorkbook workbook = new XLWorkbook();
+                SqlQueries sql = new SqlQueries();
+                var dataTable = sql.GetDataTable();
+                try
                 {
-                    foreach (var column in columns)
-                    {
-                        streamWriter.Write(column + ",");
-                    }
-
-                    streamWriter.WriteLine();
-
-                    for (var i = 0; i < rows.Count; i++)
-                    {
-                        for (var j = 1; j <= columns.Count; j++)
-                        {
-                            if (rows[i][j] != null)
-                            {
-                                streamWriter.Write(Convert.ToString(rows[i][j]) + ",");
-                            }
-                            else
-                            {
-                                streamWriter.Write(",");
-                            }
-                        }
-                        streamWriter.WriteLine();
-                    }
-                    streamWriter.Close();
+                    var ws = workbook.AddWorksheet(dataTable, "Library");
+                    ws.Columns().AdjustToContents();
+                    workbook.SaveAs(saveAsDialog.FileName);
+                    workbook.Dispose();
+                    saveAsDialog.Dispose();
                 }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
             }
         }
     }
